@@ -1,0 +1,68 @@
+{
+  "target": "~/.grok/hooks/atomic.json",
+  "hooks_key": "hooks",
+  "command_prefix": "atomic agent hooks grok",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -d .atomic || test -f .atomic-sandbox && atomic agent hooks grok session-start || true"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -d .atomic || test -f .atomic-sandbox && atomic agent hooks grok session-end || true"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -d .atomic || test -f .atomic-sandbox && atomic agent hooks grok user-prompt-submit || true"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -d .atomic || test -f .atomic-sandbox && atomic agent hooks grok pre-tool || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -d .atomic || test -f .atomic-sandbox && atomic agent hooks grok post-tool || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -d .atomic || test -f .atomic-sandbox && atomic agent hooks grok stop || true",
+            "timeout": 600
+          }
+        ]
+      }
+    ]
+  }
+}
