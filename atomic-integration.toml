@@ -5,21 +5,20 @@ version = "1.0.0"
 [requires]
 atomic = ">=0.12.0"
 
-[[file]]
-src = "rules/atomic.md"
+[skills-source]
+package = "atomic-skills"
+
+[skills]
+install = "all"
+dst_pattern = "~/.grok/skills/{name}/SKILL.md"
+
+[[skill]]
+src = "AGENTS.md"
 dst = "~/.grok/rules/atomic.md"
 
-[[file]]
-src = "skills/atomic-vault/SKILL.md"
-dst = "~/.grok/skills/atomic-vault/SKILL.md"
-
-[[file]]
-src = "skills/atomic-vcs/SKILL.md"
-dst = "~/.grok/skills/atomic-vcs/SKILL.md"
-
-[[file]]
-src = "skills/code-intelligence/SKILL.md"
-dst = "~/.grok/skills/code-intelligence/SKILL.md"
+[[repo-file]]
+src = "AGENTS.md"
+dst = "AGENTS.md"
 
 [[settings]]
 manifest = "hooks/grok.atomic-hooks.json"
